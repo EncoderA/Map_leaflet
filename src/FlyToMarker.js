@@ -8,7 +8,7 @@ const customIcon = new Icon({
     popupAnchor: [1, -34],
   });
 
-const FlyToMarker = ({ position, flyToPosition, popupText }) => {
+const FlyToMarker = ({ position, flyToPosition, popupText, }) => {
     const map = useMap();
   
     const handleMarkerClick = () => {
@@ -16,7 +16,7 @@ const FlyToMarker = ({ position, flyToPosition, popupText }) => {
     };
   
     return (
-      <Marker position={position} icon={customIcon} eventHandlers={{ click: handleMarkerClick }}>
+      <Marker position={position} wheelZoom={true} icon={customIcon} eventHandlers={{ click: handleMarkerClick }} >
         <Popup>
           <h4 className='popup-city'>{popupText.name.toUpperCase()}</h4>
           <p className='popup-city-description'>{popupText.description}</p>
